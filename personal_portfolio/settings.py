@@ -2,12 +2,19 @@ import os
 from pathlib import Path
 import environ
 
-# Initialize environment variables
-env = environ.Env()
-environ.Env.read_env()  # This will read the .env file
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Initialize environment variables
+env = environ.Env()
+
+# Explicitly tell where .env is
+env_path = os.path.join(BASE_DIR, '.env')
+if os.path.exists(env_path):
+    environ.Env.read_env(env_path)
+else:
+    raise Exception(f".env file not found at: {env_path}")
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
@@ -15,7 +22,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['*']  # Add Render URL and any other domains
+ALLOWED_HOSTS = [
+    'portfolio-supriyaa.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 
