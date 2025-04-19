@@ -100,7 +100,7 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://personal_portfolio_db_iozr_user:dJqlpiNJ3Y3dzByIPRfB6swcvOm7lYdK@dpg-d00c6uhr0fns73e4fq3g-a/personal_portfolio_db_iozr',
+        default='postgresql://supriyamaji@localhost:5432/myportfolio',
         conn_max_age=600
     )
 }
