@@ -60,7 +60,7 @@ EMAIL_HOST = 'smtp.gmail.com'  # For Gmail, use smtp.gmail.com
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'supriyamaji76@gmail.com'
-EMAIL_HOST_PASSWORD = 'gxav cvou neeo gakx'  # Not your real password!
+EMAIL_HOST_PASSWORD = 'MY_PASSWORD'  # Not your real password!
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MIDDLEWARE = [
